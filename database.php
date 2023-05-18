@@ -1,4 +1,5 @@
 <?php
+    include __DIR__ . "/pagina.php";
     class Database {
         private string $db_name = "AppleDB";
         private string $username = "blessium";
@@ -32,6 +33,7 @@
                 id INT PRIMARY KEY NOT NULL,
                 id_pagina INT NOT NULL,
                 testo VARCHAR(255) NOT NULL,
+                testo_eng VARCHAR(255) NOT NULL,
                 FOREIGN KEY (id_pagina) REFERENCES pagine(id)
             )";
 
@@ -43,6 +45,7 @@
                 id INT PRIMARY KEY NOT NULL,
                 id_titolo INT NOT NULL,
                 testo TEXT NOT NULL,
+                testo_eng TEXT NOT NULL,
                 FOREIGN KEY (id_titolo) REFERENCES titoli(id)
             )";
 
@@ -69,6 +72,20 @@
                 self::$db = new Database();
             }
             return self::$db;
+        }
+
+        function getPageInfo($page_name) {
+            $page = new Pagina();
+            $query = "SELECT t.testo  , p.testo, i.id FROM paragrafi p, pagine p2, titoli t, immagini i WHERE p.id_titolo = t.id AND t.id_pagina = p2.id AND p2.title = '$page_name'";
+            $result = $this->database->query($query);
+            $values = $result->fetch_all();
+            
+            for ($i = 0; $i < sizeof($values); $i++) {
+                $row = $values[$i];
+                $layer = new Layer($row[0], $row[1], $row[2]);
+                $page->addLayer($layer);
+            }
+            return $page;
         }
     }
 ?>
