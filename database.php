@@ -76,7 +76,7 @@
 
         function getPageInfo($page_name) {
             $page = new Pagina();
-            $query = "SELECT t.testo  , p.testo, i.id FROM paragrafi p, pagine p2, titoli t, immagini i WHERE p.id_titolo = t.id AND t.id_pagina = p2.id AND p2.title = '$page_name'";
+            $query = "SELECT t.testo, p.testo, i.id FROM paragrafi p, pagine p2, titoli t, immagini i WHERE p.id_titolo = t.id AND t.id_pagina = p2.id AND p2.title = '$page_name'";
             $result = $this->database->query($query);
             $values = $result->fetch_all();
             

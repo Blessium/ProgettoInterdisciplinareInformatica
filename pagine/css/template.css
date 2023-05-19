@@ -7,7 +7,7 @@
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
@@ -43,7 +43,7 @@
 @media (max-width: 768px) {
     .navb {
         flex-direction: column;
-        padding: 20px;
+        padding: 10px;
     }
 
     .navb a {
