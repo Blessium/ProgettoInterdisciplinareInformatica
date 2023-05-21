@@ -1,8 +1,8 @@
 <?php
 $title = "Apple - Home";
-if (!isset($_SESSION)) {
+if (!isset($_SESSION['lang'])) {
     session_start();
-    $_SESSION['lang'] = "english";
+    echo "BRUH";
 }
 
 include __DIR__ . "/database.php";

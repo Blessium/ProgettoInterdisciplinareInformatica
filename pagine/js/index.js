@@ -21,9 +21,9 @@ function getLanguage() {
             var breakdown = document.getElementById("dropdown");
             console.log(breakdown);
             if (lang == "italian") {
-                breakdown.selectedIndex = 0;
-            } else {
                 breakdown.selectedIndex = 1;
+            } else {
+                breakdown.selectedIndex = 0;
             }
         }
     })
