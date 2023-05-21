@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . "/image.php";
 class Pagina {
     public $layers;
 
@@ -15,7 +16,7 @@ class Pagina {
 
         foreach($this->layers as $layer) {
             $html .= '<div class="layer">';
-            $html .= '<img class="image" src="/image/' . $layer->image_id . ' alt="Image">';
+            $html .= '<img class="image" src="/image?image_name='. $layer->image_name . '" alt='. $layer->image_name .'>';
             $html .= '<div>';
             
             $html .= '<div class="title">'. $layer->title .'</div>';
@@ -35,12 +36,12 @@ class Layer {
     public string $title;
     public string $paragraph;
 
-    public int $image_id;
+    public string $image_name;
 
-    public function __construct($title, $paragraph, $image_id) {
+    public function __construct($title, $paragraph, $image_name) {
         $this->title = $title;
         $this->paragraph = $paragraph;
-        $this->image_id = $image_id;
+        $this->image_name = $image_name;
     }
 }
 

@@ -58,7 +58,6 @@
                 id INT PRIMARY KEY NOT NULL,
                 id_titolo INT NOT NULL,
                 filename TEXT NOT NULL,
-                image_data LONGBLOB,
                 FOREIGN KEY (id_titolo) REFERENCES titoli(id)
             )";
 
@@ -74,9 +73,12 @@
             return self::$db;
         }
 
-        function getPageInfo($page_name) {
+        function getPageInfo($page_name, $lang) {
             $page = new Pagina();
-            $query = "SELECT t.testo, p.testo, i.id FROM paragrafi p, pagine p2, titoli t, immagini i WHERE p.id_titolo = t.id AND t.id_pagina = p2.id AND p2.title = '$page_name'";
+            $query = "SELECT t.testo, p.testo, i.filename FROM paragrafi p, pagine p2, titoli t, immagini i WHERE p.id_titolo = t.id AND t.id_pagina = p2.id AND i.id_titolo = t.id AND p2.title = '$page_name'";
+            if ($lang == "english") {
+                $query = "SELECT t.testo_eng, p.testo_eng, i.filename FROM paragrafi p, pagine p2, titoli t, immagini i WHERE p.id_titolo = t.id AND t.id_pagina = p2.id AND i.id_titolo = t.id AND p2.title = '$page_name'";
+            }
             $result = $this->database->query($query);
             $values = $result->fetch_all();
             

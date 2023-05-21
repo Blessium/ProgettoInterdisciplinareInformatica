@@ -36,8 +36,8 @@
         <a href="steve.php"> Steve Jobs </a>
     
         <select onchange="selectLanguage()" name="dropdown" id="dropdown" class="dropdown">
-            <option value="italian">Italiano</option>
             <option value="english">Inglese</option>
+            <option value="italian">Italiano</option>
         </select>
 
     </div>

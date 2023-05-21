@@ -1,3 +1,0 @@
-<?php
-    $GLOBALS['lang'] = "italian";
-?>
