@@ -33,6 +33,7 @@
         <a href="storia.php"> <?php if ($_SESSION['lang'] == "italian") { echo "Storia"; } else { echo "History"; }?> </a>
         <a href="prodotti.php"> <?php if ($_SESSION['lang'] == "italian") { echo "Prodotti"; } else { echo "Products"; }?> </a>
         <a href="tecnologie.php"> <?php if ($_SESSION['lang'] == "italian") { echo "Tecnologie"; } else { echo "Technologies"; }?> </a>
+        <a href="curiosita.php"> <?php if ($_SESSION['lang'] == "italian") { echo "Curiosita'"; } else { echo "Curiosities"; }?> </a>
         <a href="steve.php"> Steve Jobs </a>
     
         <select onchange="selectLanguage()" name="dropdown" id="dropdown" class="dropdown">

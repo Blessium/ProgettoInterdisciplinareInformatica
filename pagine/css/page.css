@@ -4,7 +4,7 @@ body {
   }
 
   .container {
-    max-width: 4000px; /* Adjust the width as desired */
+    max-width: 4000px; 
     margin: 20px auto;
     padding: 0 20px;
   }
