@@ -29,6 +29,7 @@ function getLanguage() {
     })
 }
 
+
 function selectLanguage() {
 
     var breakdown = document.getElementById("dropdown"); 
@@ -42,4 +43,8 @@ function selectLanguage() {
             console.log("nice");
         }
     })
+}
+
+function getPageText() {
+
 }
